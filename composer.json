@@ -1,0 +1,19 @@
+{
+    "name": "petar/vbis2024",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "pbisevac",
+            "email": "pbisevac@singimail.rs"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-mysqli": "*"
+    }
+}
+
