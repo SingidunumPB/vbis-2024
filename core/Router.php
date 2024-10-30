@@ -12,8 +12,6 @@ class Router
     }
 
     public array $routes = [];
-//    ['get', 'userCreate', 'UserController']
-//    ['userUpdate', 'UserController']
 
     public function get($path, $callback)
     {
@@ -22,7 +20,6 @@ class Router
 
     public function resolve()
     {
-        //todo :: finish resolve method
         $path = $this->request->path();
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
