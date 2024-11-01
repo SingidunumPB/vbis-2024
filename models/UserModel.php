@@ -2,7 +2,10 @@
 
 namespace app\models;
 
-class UserModel
+use app\core\BaseModel;
+use app\core\DbConnection;
+
+class UserModel extends BaseModel
 {
     public string $email;
     public string $firstName;
@@ -10,5 +13,10 @@ class UserModel
 
     public function __construct()
     {
+    }
+
+    public function tableName()
+    {
+        return "users";
     }
 }
