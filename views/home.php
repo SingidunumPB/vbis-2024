@@ -1,4 +1,9 @@
 <?php
 ?>
 
-<h1>WELCOME PAGE</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h1>WELCOME PAGE</h1>
+    </div>
+</div>
