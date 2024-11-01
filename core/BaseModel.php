@@ -14,10 +14,16 @@ abstract class BaseModel
         $query = "select * from  $tableName limit 1";
 
         $dbResult = $con->query($query);
-        $user = $dbResult->fetch_assoc();
+        return  $dbResult->fetch_assoc();
+    }
 
-        $this->email = $user['email'];
-        $this->firstName = $user['first_name'];
-        $this->lastName = $user['last_name'];
+    public function mapData($data)
+    {
+        if ($data != null) {
+            foreach ($data as $key => $value) {
+                if (property_exists($this, $key))
+                    $this->{$key} = $value;
+            }
+        }
     }
 }
