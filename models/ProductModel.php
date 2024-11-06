@@ -7,6 +7,7 @@ use app\core\DbConnection;
 
 class ProductModel extends BaseModel
 {
+    public int $id;
     public string $name;
     public string $description;
     public int $price;
@@ -14,5 +15,15 @@ class ProductModel extends BaseModel
     public function tableName()
     {
         return "products";
+    }
+
+    public function readColumns()
+    {
+        return ["id", "name", "description"];
+    }
+
+    public function editColumns()
+    {
+        return ["name", "description"];
     }
 }
