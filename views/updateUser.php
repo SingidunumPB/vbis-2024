@@ -13,7 +13,7 @@ use app\models\UserModel;
         <div class="card-header pb-0">
             <div class="d-flex align-items-center">
                 <p class="mb-0">Edit Profile</p>
-                <button class="btn btn-primary btn-sm ms-auto" type="submit">Save</button>
+                <button class="btn btn-success btn-sm ms-auto" type="submit">Save</button>
             </div>
         </div>
         <div class="card-body">

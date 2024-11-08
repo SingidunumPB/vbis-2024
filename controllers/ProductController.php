@@ -35,6 +35,13 @@ class ProductController extends BaseController
 
         $model->mapData($_POST);
 
+        $model->validate();
+
+        if ($model->errors) {
+            $this->view->render('updateProduct', 'main', $model);
+            exit;
+        }
+
         $model->update("where id = $model->id");
 
         header("location:" . "/products");
