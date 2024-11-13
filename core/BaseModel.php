@@ -12,7 +12,7 @@ abstract class BaseModel
     public $errors;
 
     private DbConnection $db;
-    private mysqli $con;
+    public mysqli $con;
 
     public function __construct()
     {

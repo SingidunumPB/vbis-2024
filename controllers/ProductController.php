@@ -46,4 +46,9 @@ class ProductController extends BaseController
 
         header("location:" . "/products");
     }
+
+    public function accessRole(): array
+    {
+        return ['Administrator'];
+    }
 }
