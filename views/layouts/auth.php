@@ -54,7 +54,7 @@ use app\core\Application;
                             <?php
                             if (Application::$app->session->get('user')) {
                                 echo '<li class="nav-item me-0">';
-                                echo '<a class="nav-link me-2" href="/logout">';
+                                echo '<a class="nav-link me-2" href="/processLogout">';
                                 echo '<i class="ni ni-user-run opacity-6 text-dark me-1"></i>';
                                 echo 'Logout';
                                 echo '</a>';
