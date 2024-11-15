@@ -1,8 +1,8 @@
 <?php
 
-use app\models\AuthModel;
+use app\models\LoginModel;
 
-/** @var $params AuthModel
+/** @var $params LoginModel
  */
 
 ?>

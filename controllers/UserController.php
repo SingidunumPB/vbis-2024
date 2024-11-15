@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\BaseController;
 use app\models\UserModel;
 
@@ -41,7 +42,17 @@ class UserController extends BaseController
 
         $model->mapData($_POST);
 
+        $model->validate();
+
+        if ($model->errors) {
+            Application::$app->session->set('errorNotification', 'Neuspesna promena!');
+            $this->view->render('updateUser', 'main', $model);
+            exit;
+        }
+
         $model->update("where id = $model->id");
+
+        Application::$app->session->set('successNotification', 'Uspesna promena!');
 
         header("location:" . "/users");
     }
@@ -64,11 +75,14 @@ class UserController extends BaseController
         $model->validate();
 
         if ($model->errors) {
+            Application::$app->session->set('errorNotification', 'Neuspesno kreiranje!');
             $this->view->render('createUser', 'main', $model);
             exit;
         }
 
         $model->insert();
+
+        Application::$app->session->set('successNotification', 'Uspesno kreiranje!');
 
         header("location:" . "/users");
     }

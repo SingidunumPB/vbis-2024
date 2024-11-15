@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\core\Application;
 use app\core\BaseController;
 use app\models\ProductModel;
 use app\models\UserModel;
@@ -38,17 +39,20 @@ class ProductController extends BaseController
         $model->validate();
 
         if ($model->errors) {
+            Application::$app->session->set('errorNotification', 'Neuspesna promena!');
             $this->view->render('updateProduct', 'main', $model);
             exit;
         }
 
         $model->update("where id = $model->id");
 
+        Application::$app->session->set('successNotification', 'Uspesna promena!');
+
         header("location:" . "/products");
     }
 
     public function accessRole(): array
     {
-        return ['Korisnik'];
+        return ['Korisnik', 'Administrator'];
     }
 }

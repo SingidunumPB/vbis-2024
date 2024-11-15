@@ -4,7 +4,7 @@ namespace app\models;
 
 use app\core\BaseModel;
 
-class AuthModel extends BaseModel
+class LoginModel extends BaseModel
 {
     public int $id;
     public string $email = '';

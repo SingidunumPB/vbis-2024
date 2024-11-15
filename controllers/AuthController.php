@@ -4,7 +4,8 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\BaseController;
-use app\models\AuthModel;
+use app\models\RegistrationModel;
+use app\models\LoginModel;
 use app\models\RoleModel;
 use app\models\SessionUserModel;
 use app\models\UserRoleModel;
@@ -13,18 +14,19 @@ class AuthController extends BaseController
 {
     public function registration()
     {
-        $this->view->render('registration', 'auth', new AuthModel());
+        $this->view->render('registration', 'auth', new RegistrationModel());
     }
 
     public function processRegistration()
     {
-        $model = new AuthModel();
+        $model = new RegistrationModel();
 
         $model->mapData($_POST);
 
         $model->validate();
 
         if ($model->errors) {
+            Application::$app->session->set('errorNotification', 'Neuspesna registracija!');
             $this->view->render('registration', 'auth', $model);
             exit;
         }
@@ -46,6 +48,8 @@ class AuthController extends BaseController
 
         $userRoleModel->insert();
 
+        Application::$app->session->set('successNotification', 'Uspesna registracija!');
+
         header("location:" . "/login");
     }
 
@@ -55,12 +59,12 @@ class AuthController extends BaseController
             header("location:" . "/");
         }
 
-        $this->view->render('login', 'auth', new AuthModel());
+        $this->view->render('login', 'auth', new LoginModel());
     }
 
     public function processLogin()
     {
-        $model = new AuthModel();
+        $model = new LoginModel();
 
         $model->mapData($_POST);
 
@@ -86,6 +90,8 @@ class AuthController extends BaseController
         }
 
         $model->password = $loginPassword;
+
+        Application::$app->session->set('errorNotification', 'Neuspesan login!');
 
         $this->view->render('login', 'auth', $model);
     }

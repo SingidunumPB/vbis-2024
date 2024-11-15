@@ -23,4 +23,33 @@ class Session
     {
         unset($_SESSION[$key]);
     }
+
+    public function showSuccessNotification()
+    {
+        $message = $this->get("successNotification");
+        if ($message) {
+            echo "
+            <script>
+                toastr.success('$message')
+            </script>
+            ";
+
+            $this->delete("successNotification");
+        }
+    }
+
+    public function showErrorNotification()
+    {
+        $message = $this->get("errorNotification");
+
+        if ($message) {
+            echo "
+            <script>
+                toastr.error('$message')
+            </script>
+            ";
+
+            $this->delete("errorNotification");
+        }
+    }
 }
