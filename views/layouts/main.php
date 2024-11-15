@@ -1,10 +1,3 @@
-<?php
-
-use app\core\Application;
-
-var_dump(Application::$app->session->get('user'));
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
