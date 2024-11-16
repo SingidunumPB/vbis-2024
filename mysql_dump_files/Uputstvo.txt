@@ -1,0 +1,16 @@
+Nacin pokretanja dump fajla:
+	1. Napravite semu pod nazivom vbis
+	2. Kopirajte sadrzaj iz zeljenog dump fajla u vas IDE za bazu podataka
+	3. Pokrenite skriptu
+
+Nacin pravljenja dump fajla:
+	1. Otvorite CMD kao administrator
+	2. Otvorite putanju do dump skripte, u CMDu ukucajte: cd C:\xampp\mysql\bin
+	3. Nakon toga napravite dump sa komandom: mysqldump -u root -p vbis > vbis-yyyy-mm-dd.sql
+	4. Ukucajte lozinku za usera root
+	5. Na putanji C:\xampp\mysql\bin pronadjite fajl pod nazivom vbis-yyyy-mm-dd.sql i mozete ga koristiti
+
+	Dodatno:
+		1. Ako koristite drugog usera promenite root usera iz koraka 3 sa vasim userom, nakon slova -p treba uneti password.
+		2. "vbis" predstavlja bazu podataka za koju zelite da napravite dump fajl
+		3. vbis-yyyy-mm-dd.sql predstavlja naziv dump fajla
