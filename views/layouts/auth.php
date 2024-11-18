@@ -87,7 +87,7 @@ use app\core\Application;
         <div class="page-header min-vh-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
+                    <div class="col-xl-6 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
                         {{ RENDER_SECTION }}
                     </div>
                     <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">

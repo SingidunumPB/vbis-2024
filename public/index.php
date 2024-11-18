@@ -7,6 +7,7 @@ use app\controllers\HomeController;
 use app\controllers\ProductController;
 use app\controllers\ServiceController;
 use app\controllers\UserController;
+use app\controllers\UserServicesController;
 use app\core\Application;
 
 $app = new Application();
@@ -40,5 +41,9 @@ $app->router->get("/updateService", [ServiceController::class, 'update']);
 $app->router->get("/createService", [ServiceController::class, 'create']);
 $app->router->post("/processUpdateService", [ServiceController::class, 'processUpdate']);
 $app->router->post("/processCreateService", [ServiceController::class, 'processCreate']);
+
+//User services
+$app->router->get("/servicesForUser", [UserServicesController::class, 'listForUsers']);
+
 
 $app->run();

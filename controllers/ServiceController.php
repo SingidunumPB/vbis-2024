@@ -17,6 +17,15 @@ class ServiceController extends BaseController
         $this->view->render('services', 'main', $results);
     }
 
+    public function listForUsers()
+    {
+        $model = new ServiceModel();
+
+        $results = $model->all("");
+
+        $this->view->render('servicesForUser', 'auth', $results);
+    }
+
 
     public function create()
     {
