@@ -24,7 +24,7 @@
                      <input type='date' name='date_time' class='form-control mb-3 mb-md-0' />
                       </div>
                     <div class='col-md-6 d-flex justify-content-center align-items-center'>
-                      <button class='btn btn-sm btn-primary mb-0'>Reservations</button>
+                      <button class='btn btn-sm btn-primary mb-0'>Reservation</button>
                     </div>
                     </div>
                 </div>
