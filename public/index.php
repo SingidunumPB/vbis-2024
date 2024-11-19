@@ -5,6 +5,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use app\controllers\AuthController;
 use app\controllers\HomeController;
 use app\controllers\ProductController;
+use app\controllers\ReservationController;
 use app\controllers\ServiceController;
 use app\controllers\UserController;
 use app\controllers\UserServicesController;
@@ -44,6 +45,7 @@ $app->router->post("/processCreateService", [ServiceController::class, 'processC
 
 //User services
 $app->router->get("/servicesForUser", [UserServicesController::class, 'listForUsers']);
+$app->router->post("/processReservation", [ReservationController::class, 'processReservation']);
 
 
 $app->run();

@@ -20,6 +20,8 @@ use app\core\Application;
     <!-- Nucleo Icons -->
     <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-icons.css" rel="stylesheet"/>
     <link href="https://demos.creative-tim.com/argon-dashboard-pro/assets/css/nucleo-svg.css" rel="stylesheet"/>
+
+
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- CSS Files -->
@@ -28,6 +30,25 @@ use app\core\Application;
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
     <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
+
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/argon-dashboard.min.js?v=2.1.0"></script>
 </head>
 
 <body class="">
@@ -53,6 +74,15 @@ use app\core\Application;
                         <ul class="navbar-nav">
                             <?php
                             if (Application::$app->session->get('user')) {
+                                echo '
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/">
+                                                                                      <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
+
+                                            <span class="nav-link-text ms-1">Home</span>
+                                        </a>
+                                    </li>
+                                ';
                                 echo '<li class="nav-item me-0">';
                                 echo '<a class="nav-link me-2" href="/processLogout">';
                                 echo '<i class="ni ni-user-run opacity-6 text-dark me-1"></i>';
@@ -106,24 +136,8 @@ use app\core\Application;
         </div>
     </section>
 </main>
-<!--   Core JS Files   -->
-<script src="../assets/js/core/popper.min.js"></script>
-<script src="../assets/js/core/bootstrap.min.js"></script>
-<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-<script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-            damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-</script>
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/argon-dashboard.min.js?v=2.1.0"></script>
+
+
 </body>
 
 <?php
