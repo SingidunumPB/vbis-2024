@@ -9,6 +9,7 @@ abstract class BaseModel
     public const RULE_EMAIL = "rule_email";
     public const RULE_REQUIRED = "rule_required";
     public const RULE_UNIQUE_EMAIL = "rule_unique_email";
+    public const GREATER_THEN_ZERO = "greater_then_zero";
 
     public $errors;
 
@@ -132,6 +133,12 @@ abstract class BaseModel
                 if ($rule == self::RULE_UNIQUE_EMAIL) {
                     if ($this->checkUniqueEmail($value)) {
                         $this->errors[$attribute][] = "This Email already exists";
+                    }
+                }
+
+                if ($rule == self::GREATER_THEN_ZERO) {
+                    if ($value <= 0) {
+                        $this->errors[$attribute][] = "This field must be greater then 0";
                     }
                 }
             }

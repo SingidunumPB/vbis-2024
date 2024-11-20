@@ -15,11 +15,18 @@ class ReservationController extends baseController
 
         $model->mapData($_POST);
 
-        $model->one("where date(reservation_time) = '$model->reservation_time' and id_services = $model->id_services");
+        $model->one("where reservation_time = '$model->reservation_time' and id_services = $model->id_services");
 
-        if(isset($model->id)){
+        if (isset($model->id)) {
             Application::$app->session->set('errorNotification', 'Vec postoji zakazani termin za izabrani datum!');
             header("location:" . "/servicesForUser");
+            exit;
+        }
+
+        if ($model->reservation_time == '') {
+            Application::$app->session->set('errorNotification', 'Morate izabrati datum i vreme termina!');
+            header("location:" . "/servicesForUser");
+            exit;
         }
 
         $sessions = Application::$app->session->get('user');
@@ -28,6 +35,10 @@ class ReservationController extends baseController
             $model->id_user = $session['id_user'];
         }
 
+        $serviceModel = new ServiceModel();
+        $serviceModel->one("where id = '$model->id_services'");
+
+        $model->price = $serviceModel->price;
         $model->insert();
         Application::$app->session->set('successNotification', 'Uspesno rezervisan termin!');
 

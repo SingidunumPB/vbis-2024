@@ -1,5 +1,7 @@
 <?php
 
+/** @var $params array
+ */
 
 ?>
 
@@ -13,7 +15,7 @@
         <input type='hidden' name='id_services' value='$parm[id]'>
         <div class='row g-0'>
             <div class='col-md-4'>
-                <img src='$parm[image_name]' class='img-fluid rounded-start' alt='...'>
+                <img src='../assets/uploads/$parm[image_name]' class='img-fluid rounded-start' alt='...'>
             </div>
             <div class='col-md-8'>
                 <div class='card-body p-2'>
@@ -23,7 +25,7 @@
                 <div class='card-footer p-2'>
                     <div class='row'>
                     <div class='col-md-6 d-flex justify-content-center align-items-center align-content-center center'>
-                     <input type='date' name='reservation_time' class='form-control mb-3 mb-md-0 datetime-picker-helper' id='datetime-picker-helper-$parm[id]'/>
+                     <input type='text' placeholder='Pick Date' name='reservation_time' class='form-control mb-3 mb-md-0 datetime-picker-helper' id='datetime-picker-helper-$parm[id]'/>
                      </div>
                     <div class='col-md-6 d-flex justify-content-center align-items-center'>
                       <button class='btn btn-sm btn-primary mb-0'>Reservation</button>

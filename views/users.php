@@ -1,3 +1,10 @@
+<?php
+
+/** @var $params array
+ */
+
+?>
+
 <div class="card">
     <div class="card-header pb-0">
         <div class="d-flex align-items-center">

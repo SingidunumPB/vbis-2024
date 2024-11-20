@@ -49,6 +49,10 @@ use app\core\Application;
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/argon-dashboard.min.js?v=2.1.0"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 </head>
 
 <body class="">
@@ -139,7 +143,14 @@ use app\core\Application;
 
 
 </body>
-
+<script>
+    $(document).ready(function () {
+        $('.datetime-picker-helper').datetimepicker({
+            minDate: 0,
+            allowTimes: ['07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'],
+        });
+    });
+</script>
 <?php
 Application::$app->session->showSuccessNotification();
 Application::$app->session->showErrorNotification();
