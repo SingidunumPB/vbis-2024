@@ -28,7 +28,7 @@
                      <input type='text' placeholder='Pick Date' name='reservation_time' class='form-control mb-3 mb-md-0 datetime-picker-helper' id='datetime-picker-helper-$parm[id]'/>
                      </div>
                     <div class='col-md-6 d-flex justify-content-center align-items-center'>
-                      <button class='btn btn-sm btn-primary mb-0'>Reservation</button>
+                      <button class='btn btn-sm btn-primary mb-0'>Reservation - $parm[price] €</button>
                     </div>
                     </div>
                 </div>

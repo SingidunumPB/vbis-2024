@@ -29,6 +29,7 @@ use app\core\Application;
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/toastr/toastr.min.js"></script>
     <script src="../assets/js/plugins/toastr/toastr-options.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -67,6 +68,14 @@ use app\core\Application;
                             <span class="nav-link-text ms-1">List of reservations</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/myReports">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-chart-bar-32 text-dark text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">My Reports</span>
+                        </a>
+                    </li>
                 ';
             }
 
@@ -80,13 +89,28 @@ use app\core\Application;
                             <span class="nav-link-text ms-1">Users</span>
                         </a>
                     </li>
-            
                     <li class="nav-item">
                         <a class="nav-link " href="/services">
                             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="ni ni-folder-17 text-dark text-sm opacity-10"></i>
                             </div>
                             <span class="nav-link-text ms-1">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/servicesForUser">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-bullet-list-67 text-dark text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">List of reservations</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/myReports">
+                            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="ni ni-chart-bar-32 text-dark text-sm opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1">My Reports</span>
                         </a>
                     </li>
                 ';

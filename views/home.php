@@ -29,7 +29,7 @@
                                                 <span>$parm[reservation_time]</span>
                                                  </div>
                                                 <div class='col-md-6 d-flex justify-content-center align-items-center'>
-                                                  <button class='btn btn-sm btn-success mb-0'>Reserved</button>
+                                                  <button class='btn btn-sm btn-success mb-0'>Reserved - $parm[price] €</button>
                                                 </div>
                                                 </div>
                                             </div>
