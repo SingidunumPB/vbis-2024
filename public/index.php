@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+use app\controllers\AdminReportController;
 use app\controllers\AuthController;
 use app\controllers\HomeController;
 use app\controllers\ProductController;
@@ -53,6 +54,8 @@ $app->router->get("/myReports", [UserReportController::class, 'myReports']);
 $app->router->get("/getNumberOfReservationsPerMonth", [UserReportController::class, 'getNumberOfReservationsPerMonth']);
 $app->router->get("/getPricePerMonth", [UserReportController::class, 'getPricePerMonth']);
 
-
+//Admin reports
+$app->router->get("/adminReports", [AdminReportController::class, 'adminReports']);
+$app->router->get("/getPricePerUser", [AdminReportController::class, 'getPricePerUser']);
 
 $app->run();
